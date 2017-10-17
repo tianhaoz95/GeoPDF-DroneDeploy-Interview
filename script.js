@@ -2,7 +2,6 @@ $(document).ready(function () {
   $("#generate-btn").click(function () {
     new DroneDeploy({version: 1}).then(function(dronedeploy){
       dronedeploy.Plans.getCurrentlyViewed().then(function (plan) {
-        console.log("Plan: ", plan);
         var zoom = 20
         dronedeploy.Tiles.get({planId: plan.id, layerName: 'ortho', zoom: zoom})
         .then(function (res) {
