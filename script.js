@@ -6,10 +6,8 @@ $(document).ready(function () {
         var zoom = 20
         dronedeploy.Tiles.get({planId: plan.id, layerName: 'ortho', zoom: zoom})
         .then(function (res) {
-          console.log(res);
           const tiles = getTilesFromGeometry(plan.geometry, res.template, zoom)
           var imgHtml = ""
-          console.log("the fucking width: ", window.innerWidth);
           for (var i = 0; i < tiles.length; ++i) {
             var temp = '<div style="display:inline-block;white-space:nowrap"><img style="width:50px" src="'+tiles[i]+'"/></div>'
             if (i % 11 === 10) {
